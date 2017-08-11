@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/BuyNSell.iml" filepath="$PROJECT_DIR$/.idea/BuyNSell.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AppClient/buynsellClient.iml" filepath="$PROJECT_DIR$/AppClient/buynsellClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AppServer/buynsellServer.iml" filepath="$PROJECT_DIR$/AppServer/buynsellServer.iml" />
+      <module fileurl="file://D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsell.iml" filepath="D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsell.iml" />
+      <module fileurl="file://D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsellclient.iml" filepath="D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsellclient.iml" />
     </modules>
   </component>
 </project>
