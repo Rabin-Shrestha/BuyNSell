@@ -21,6 +21,7 @@ public class UserService {
     public UserService() {
         this.restTemplate = new RestTemplate();
     }
+    
 
     public User getUser(String userId) {
         return this.restTemplate.getForEntity("http://localhost:8080/user/"+userId, User.class).getBody();
@@ -29,17 +30,16 @@ public class UserService {
         String urlGETList = "http://localhost:8080/user/";
         ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(urlGETList, Object[].class);
         Object[] objects = responseEntity.getBody();
-        MediaType contentType = responseEntity.getHeaders().getContentType();
-        HttpStatus statusCode = responseEntity.getStatusCode();
+        System.out.println(objects);
        return objects;
     }
 
-    public static void main(String[] args) {
-        UserService userService=new UserService();
-        Object[] objects = userService.getUsers();
-        for(Object obj:objects){
-            System.out.print(obj);
-
-        }
-    }
+//    public static void main(String[] args) {
+//        UserService userService=new UserService();
+//        Object[] objects = userService.getUsers();
+//        for(Object obj:objects){
+//            System.out.print(obj);
+//
+//        }
+//    }
 }

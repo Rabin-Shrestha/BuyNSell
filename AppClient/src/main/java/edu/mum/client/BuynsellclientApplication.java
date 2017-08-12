@@ -14,6 +14,9 @@ public class BuynsellclientApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BuynsellclientApplication.class, args);
-
+//		UserService  userService = new UserService(); 
+//		
+//		System.out.println(userService.getUser("598e7198fb3cd114982e9455").toString());
+		
 	}
 }
