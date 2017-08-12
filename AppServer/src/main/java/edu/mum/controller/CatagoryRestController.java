@@ -29,7 +29,8 @@ public class CatagoryRestController implements IController<Catagory> {
 	@Override
 	public Catagory update(Catagory t, String id) {
 		// TODO Auto-generated method stub
-		return null;
+		t.setCata_id(id);
+		return cRep.save(t);
 	}
 
 	@Override
@@ -49,6 +50,5 @@ public class CatagoryRestController implements IController<Catagory> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Autowired
 	
 }
