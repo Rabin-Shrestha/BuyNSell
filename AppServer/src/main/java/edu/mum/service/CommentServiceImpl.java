@@ -45,11 +45,11 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findById(id);
     }
 
-    public List<Comment> findAllByContentLike(String content){
+    public List<Comment> findAllByContentLike(String content) {
         return commentRepository.findAllByContentLike(content);
     }
 
-    public List<Comment> findAllByCommentedOn(Date commentedOn){
+    public List<Comment> findAllByCommentedOn(Date commentedOn) {
         return commentRepository.findAllByCommentedOn(commentedOn);
     }
 }

@@ -9,8 +9,10 @@ import java.util.List;
 /**
  * Created by prasannabajracharya on 8/12/17.
  */
-public interface CommentRepository extends MongoRepository<Comment, Integer>{
+public interface CommentRepository extends MongoRepository<Comment, Integer> {
     public Comment findById(String id);
+
     public List<Comment> findAllByContentLike(String content);
+
     public List<Comment> findAllByCommentedOn(Date commentedOn);
 }

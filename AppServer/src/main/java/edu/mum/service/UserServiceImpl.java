@@ -56,11 +56,13 @@ public class UserServiceImpl implements UserService {
     public List<User> findAllByZipcode(String zipcode) {
         return userRepository.findAllByZipcode(zipcode);
     }
+
     @Override
     public User findUserByUserNameAndPassword(String username, String password) {
         return userRepository.findUserByUserNameAndPassword(username, password);
 
     }
+
     @Override
     public List<User> findUserByAddressIsLike(String address) {
         return userRepository.findAllUserByAddressIsLike(address);
@@ -69,7 +71,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Long deleteById(String userid) {
 
-       return userRepository.deleteById(userid);
+        return userRepository.deleteById(userid);
     }
 
 

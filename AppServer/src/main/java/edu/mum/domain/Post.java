@@ -17,7 +17,8 @@ public class Post {
     private String photoURL;
     private String userId;
 
-    public Post(){}
+    public Post() {
+    }
 
     public Post(String title, String category, Date postedOn, String description, String photoURL) {
         this.title = title;

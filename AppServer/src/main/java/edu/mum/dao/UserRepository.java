@@ -11,10 +11,16 @@ import java.util.List;
 public interface UserRepository extends MongoRepository<User, Integer> {
 
     User findByUserName(String username);
+
     User findById(String id);
+
     User findByEmail(String email);
+
     List<User> findAllByZipcode(String zipcode);
-    User findUserByUserNameAndPassword(String username,String password);
+
+    User findUserByUserNameAndPassword(String username, String password);
+
     List<User> findAllUserByAddressIsLike(String address);
+
     Long deleteById(String userid);
 }

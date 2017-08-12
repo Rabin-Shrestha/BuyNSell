@@ -3,8 +3,7 @@ package edu.mum.domain;
 /**
  * Created by Rabin Shrestha on 8/11/2017.
  */
-public class Authorities
-{
+public class Authorities {
     private String userName;
 
     private String authority;

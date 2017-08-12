@@ -5,7 +5,6 @@ import edu.mum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
@@ -52,12 +51,12 @@ public class PostController implements IController<Post> {
     }
 
     @GetMapping("/find/title/{titleValue}")
-    public List<Post> findByTitle(@PathVariable("titleValue") String title){
+    public List<Post> findByTitle(@PathVariable("titleValue") String title) {
         return postService.findAllByTitle(title);
     }
 
     @GetMapping("/find/category/{categoryValue}")
-    public List<Post> findByCategory(@PathVariable("categoryValue") String category){
+    public List<Post> findByCategory(@PathVariable("categoryValue") String category) {
         return postService.findAllByCategory(category);
     }
 }

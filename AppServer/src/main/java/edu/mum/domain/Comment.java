@@ -13,7 +13,8 @@ public class Comment {
     private String content;
     private Date commentedOn;
 
-    public Comment(){}
+    public Comment() {
+    }
 
     public Comment(String content, Date commentedOn) {
         this.content = content;

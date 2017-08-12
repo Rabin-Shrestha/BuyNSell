@@ -9,5 +9,6 @@ import java.util.List;
  */
 public interface PostService extends IService<Post> {
     List<Post> findAllByTitle(String title);
+
     List<Post> findAllByCategory(String category);
 }

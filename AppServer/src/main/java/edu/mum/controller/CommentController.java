@@ -51,12 +51,12 @@ public class CommentController implements IController<Comment> {
     }
 
     @GetMapping("/find/content/{contentValue}")
-    public List<Comment> findAllByContentLike(@PathVariable("contentValue") String content){
+    public List<Comment> findAllByContentLike(@PathVariable("contentValue") String content) {
         return commentService.findAllByContentLike(content);
     }
 
     @GetMapping("/find/commentedOn/{commentedOnValue")
-    public List<Comment> findAllByCommentedOn(@PathVariable Date commentedOn){
+    public List<Comment> findAllByCommentedOn(@PathVariable Date commentedOn) {
         return commentService.findAllByCommentedOn(commentedOn);
     }
 }

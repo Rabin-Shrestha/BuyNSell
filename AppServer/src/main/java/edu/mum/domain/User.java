@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Rabin Shrestha on 8/10/2017.
  */
-@Document(collection="Users")
+@Document(collection = "Users")
 public class User {
 
     @Id
@@ -21,6 +21,13 @@ public class User {
     private String firstName;
     private String lastName;
     private String address;
+    private String zipcode;
+    private String phoneNo;
+    private String photoUrl;
+    private LocalDateTime lastLogIn;
+    private LocalDateTime createdOn;
+    private List<UserReview> userReviewList;
+    private List<String> userPostIds;
 
     @Override
     public String toString() {
@@ -42,15 +49,6 @@ public class User {
                 '}';
     }
 
-    private String zipcode;
-    private String phoneNo;
-    private String photoUrl;
-    private LocalDateTime lastLogIn;
-    private LocalDateTime createdOn;
-    private List<UserReview> userReviewList;
-    private List<String> userPostIds;
-
-
     public String getZipcode() {
         return zipcode;
     }
@@ -58,7 +56,6 @@ public class User {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
-
 
 
     public String getPassword() {
@@ -89,6 +86,7 @@ public class User {
         return email;
 
     }
+
     public void setEmail(String email) {
         this.email = email;
     }

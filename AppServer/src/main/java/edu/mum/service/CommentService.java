@@ -10,5 +10,6 @@ import java.util.List;
  */
 public interface CommentService extends IService<Comment> {
     public List<Comment> findAllByContentLike(String content);
+
     public List<Comment> findAllByCommentedOn(Date commentedOn);
 }

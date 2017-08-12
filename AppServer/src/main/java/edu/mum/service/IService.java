@@ -1,7 +1,5 @@
 package edu.mum.service;
 
-import edu.mum.domain.User;
-
 import java.util.List;
 
 /**
@@ -9,8 +7,12 @@ import java.util.List;
  */
 public interface IService<T> {
     T add(T t);
+
     T update(T t, String id);
+
     T delete(T t);
+
     List<T> getAll();
+
     T get(String id);
 }

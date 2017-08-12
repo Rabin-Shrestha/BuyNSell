@@ -9,10 +9,15 @@ import java.util.List;
  */
 public interface UserService extends IService<User> {
     public User findByEmail(String email);
+
     public User findByUserName(String name);
+
     List<User> findAllByZipcode(String zipcode);
-    User findUserByUserNameAndPassword(String username,String password);
+
+    User findUserByUserNameAndPassword(String username, String password);
+
     List<User> findUserByAddressIsLike(String address);
+
     Long deleteById(String userid);
 
 
