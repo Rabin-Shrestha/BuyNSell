@@ -24,14 +24,15 @@ public class WishListRestController implements IController<WishList> {
 	}
 
 	@Override
-	@PutMapping("/{id}")
+	@PutMapping("/update/{id}")
 	public WishList update(@RequestBody WishList t, @PathVariable("id") String id) {
 		// TODO Auto-generated method stub
-		//t.setWl_id(id);
+		t.setWl_id(id);
 		return wlService.update(t, id);
 	}
 
 	@Override
+	@DeleteMapping("/delete/{id}")
 	public WishList delete(@RequestBody WishList t, @RequestParam String id) {
 		// TODO Auto-generated method stub
 		wlService.deleteByWl_id(id);
@@ -39,14 +40,14 @@ public class WishListRestController implements IController<WishList> {
 	}
 
 	@Override
-	@GetMapping("/list")
+	@GetMapping("/all")
 	public List<WishList> getAll() {
 		// TODO Auto-generated method stub
 		return wlService.getAll();
 	}
 
 	@Override
-	@GetMapping("/onelist/{id}")
+	@GetMapping("/get/{id}")
 	public WishList get(@PathVariable("id") String id) {
 		// TODO Auto-generated method stub
 		return wlService.get(id);
