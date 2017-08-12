@@ -1,6 +1,7 @@
 package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -8,16 +9,30 @@ import java.util.List;
 /**
  * Created by Rabin Shrestha on 8/10/2017.
  */
+@Document(collection="Users")
 public class User {
+
+    @Id
+    private String id;
+    private String userName;
+    private String password;
+    private boolean enabled;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String address;
+
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
-                ", userName='" + userName + '\'' +
+                "userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
                 ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
+                ", zipcode='" + zipcode + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", photoUrl='" + photoUrl + '\'' +
                 ", lastLogIn=" + lastLogIn +
@@ -27,19 +42,40 @@ public class User {
                 '}';
     }
 
-    @Id
-    private String id;
-    private String userName;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String address;
+    private String zipcode;
     private String phoneNo;
     private String photoUrl;
     private LocalDateTime lastLogIn;
     private LocalDateTime createdOn;
     private List<UserReview> userReviewList;
     private List<String> userPostIds;
+
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public List<String> getUserPostIds() {
         return userPostIds;
@@ -53,7 +89,6 @@ public class User {
         return email;
 
     }
-
     public void setEmail(String email) {
         this.email = email;
     }

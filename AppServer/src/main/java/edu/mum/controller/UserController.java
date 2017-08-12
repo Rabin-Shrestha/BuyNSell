@@ -3,11 +3,8 @@ package edu.mum.controller;
 import edu.mum.domain.User;
 import edu.mum.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
@@ -15,7 +12,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController implements IController<User>{
+public class UserController implements IController<User> {
     @Autowired
     private UserService userService;
 
@@ -23,22 +20,24 @@ public class UserController implements IController<User>{
     @Override
     @PostMapping("/")
     public User add(@RequestBody User user) {
-        System.out.println("user:"+user);
+        System.out.println("user:" + user);
         return userService.add(user);
     }
 
     @Override
     @PutMapping("/{id}")
-    public User update(@RequestBody User user, @PathParam("id") String id) {
+    public User update(@RequestBody User user, @PathVariable("id") String id) {
+        System.out.println("Update request user id:" + id);
+        System.out.println("Update request user on ob:" + user.getId());
         user.setId(id);
         return userService.update(user,id);
     }
 
     @Override
-    @DeleteMapping("/{id}")
-    public User delete(@RequestBody User user,@PathParam("id") String id) {
-        user.setId(id);
-        return userService.delete(user);
+    @DeleteMapping("/delete")
+    public User delete(@RequestBody User user, @RequestParam String id) {
+        System.out.println("No of row deleted :" + userService.deleteById(id));
+        return user;
     }
 
     @Override
@@ -49,9 +48,41 @@ public class UserController implements IController<User>{
 
     @Override
     @GetMapping("/{id}")
-    public User get(@PathParam("id") String id) {
+    public User get(@PathVariable("id") String id) {
         return userService.get(id);
     }
 
 
+    @PostMapping("/find/username/{uname}")
+    public User getUserByUserName(@PathVariable("uname") String uname) {
+        return userService.findByUserName(uname);
+    }
+
+    @PostMapping("/find/email/")
+    public User getUserByEmail(@RequestBody User user) {
+        return userService.findByEmail(user.getEmail());
+    }
+
+    @GetMapping("/find/zipcode/{zipcode}")
+    public List<User> getUserListByZipCode(@PathVariable("zipcode") String zipcode) {
+        return userService.findAllByZipcode(zipcode);
+    }
+
+    @GetMapping("/find/address/{address}")
+    public List<User> getUserListByAddress(@PathVariable("address") String address) {
+        return userService.findUserByAddressIsLike(address);
+    }
+
+    @PostMapping("/validate/")
+    public String validateUser(@RequestBody User user) {
+        User usr = userService.findUserByUserNameAndPassword(user.getUserName(), user.getPassword());
+        if (usr != null)
+            return "{\"success\":true}";
+        else
+            return "{\"success\":false}";
+    }
+
+
 }
+
+
