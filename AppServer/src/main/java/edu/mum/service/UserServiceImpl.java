@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(String id, User user) {
+    public User update(User user, String id) {
         user.setId(id);
         // needs change here, it always saves new record
         return userRepository.save(user);

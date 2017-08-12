@@ -30,7 +30,7 @@ public class UserController implements IController<User> {
         System.out.println("Update request user id:" + id);
         System.out.println("Update request user on ob:" + user.getId());
         user.setId(id);
-        return userService.update(id, user);
+        return userService.update(user,id);
     }
 
     @Override

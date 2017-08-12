@@ -3,8 +3,11 @@
 ### IntelliJ IDEA ###
 .idea
 .idea/libraries
+.idea/libraries/
 .idea/workspace.xml
 .idea/*
+.idea/
+.idea/modules.xml
 target/
 !.mvn/wrapper/maven-wrapper.jar
 *.iws
