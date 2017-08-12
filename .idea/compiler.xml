@@ -8,8 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="buynsell" />
         <module name="buynsellclient" />
-        <module name="buynsellClient" />
-        <module name="buynsellServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
