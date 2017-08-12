@@ -20,35 +20,40 @@ public class CatagoryRestController implements IController<Catagory> {
 	private CatagoryRepository cRep;
 	
 	@Override
-	@PostMapping
-	public Catagory add(Catagory t) {
+	@PostMapping("/")
+	public Catagory add(@RequestBody Catagory t) {
 		// TODO Auto-generated method stub
 		return cRep.save(t);
 	}
 
 	@Override
-	public Catagory update(Catagory t, String id) {
+	@PutMapping("/update/{id}")
+	public Catagory update(@RequestBody Catagory t, @PathVariable("id") String id) {
 		// TODO Auto-generated method stub
 		t.setCata_id(id);
 		return cRep.save(t);
 	}
 
 	@Override
-	public Catagory delete(Catagory t, String id) {
+	@DeleteMapping("/detele/{id}")
+	public Catagory delete(@RequestBody Catagory t, @PathVariable("id") String id) {
 		// TODO Auto-generated method stub
-		return null;
+		cRep.deleteById(id);
+		return t;
 	}
 
 	@Override
+	@GetMapping("/all")
 	public List<Catagory> getAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return cRep.findAll();
 	}
 
 	@Override
-	public Catagory get(String id) {
+	@GetMapping("/get/{id}")
+	public Catagory get(@PathVariable("id") String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return cRep.findById(id);
 	}
 	
 }
