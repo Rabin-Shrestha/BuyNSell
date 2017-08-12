@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface IService<T> {
     T add(T t);
-    T update(T t, String id);
+    T update(String id,T t);
     T delete(T t);
     List<T> getAll();
     T get(String id);
