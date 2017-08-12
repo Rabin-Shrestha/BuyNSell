@@ -8,11 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="buynsell" />
         <module name="buynsellclient" />
+        <module name="buynsellClient" />
+        <module name="buynsellServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="buynsell" target="1.8" />
       <module name="buynsellclient" target="1.8" />
+      <module name="buynsellClient" target="1.8" />
+      <module name="buynsellServer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
