@@ -50,6 +50,7 @@ public class UserService extends AbstractService<User>{
 
     public List<User> getUsers() {
         String urlGETList = "http://localhost:8080/user/";
+<<<<<<< HEAD
         //ResponseEntity<Object[]> responseEntity = restTemplate.getForObject(urlGETList, Object[].class);
         ResponseEntity<List<User>> response =
                 restTemplate.exchange(urlGETList,
@@ -108,6 +109,13 @@ public class UserService extends AbstractService<User>{
 
 *//*
     }*/
+=======
+        ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(urlGETList, Object[].class);
+        Object[] objects = responseEntity.getBody();
+        System.out.println("list of users:"+objects);
+        return objects;
+    }
+>>>>>>> a911ddf093dd06f8da1adb7440a4833e75753548
 
 //    public static void main(String[] args) {
 //        UserService userService=new UserService();
