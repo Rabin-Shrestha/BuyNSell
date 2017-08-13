@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BuyNSell.iml" filepath="$PROJECT_DIR$/.idea/BuyNSell.iml" />
+      <module fileurl="file://$APPLICATION_HOME_DIR$/bin/D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsell.iml" filepath="$APPLICATION_HOME_DIR$/bin/D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsell.iml" />
+      <module fileurl="file://$APPLICATION_HOME_DIR$/bin/D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsellclient.iml" filepath="$APPLICATION_HOME_DIR$/bin/D:/EA/EA_Final_Project/BuyNSell/AppServer/buynsellclient.iml" />
+    </modules>
+  </component>
+</project>

@@ -25,7 +25,7 @@ public class UserService {
         String urlGETList = "http://localhost:8080/user/";
         ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity(urlGETList, Object[].class);
         Object[] objects = responseEntity.getBody();
-        System.out.println(objects);
+        System.out.println("list of users:"+objects);
         return objects;
     }
 
