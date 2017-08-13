@@ -3,7 +3,7 @@ package edu.mum.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,10 +24,29 @@ public class User {
     private String zipcode;
     private String phoneNo;
     private String photoUrl;
-    private LocalDateTime lastLogIn;
-    private LocalDateTime createdOn;
+    private String lastLogIn;
+    private String createdOn;
     private List<UserReview> userReviewList;
     private List<String> userPostIds;
+
+    public User(){}
+
+    public User(String userName, String password, boolean enabled, String email, String firstName, String lastName, String address, String zipcode, String phoneNo, String photoUrl, String lastLogIn, String createdOn, List<UserReview> userReviewList, List<String> userPostIds) {
+        this.userName = userName;
+        this.password = password;
+        this.enabled = enabled;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.zipcode = zipcode;
+        this.phoneNo = phoneNo;
+        this.photoUrl = photoUrl;
+        this.lastLogIn = lastLogIn;
+        this.createdOn = createdOn;
+        this.userReviewList = userReviewList;
+        this.userPostIds = userPostIds;
+    }
 
     @Override
     public String toString() {
@@ -131,19 +150,19 @@ public class User {
         this.photoUrl = photoUrl;
     }
 
-    public LocalDateTime getLastLogIn() {
+    public String getLastLogIn() {
         return lastLogIn;
     }
 
-    public void setLastLogIn(LocalDateTime lastLogIn) {
+    public void setLastLogIn(String lastLogIn) {
         this.lastLogIn = lastLogIn;
     }
 
-    public LocalDateTime getCreatedOn() {
+    public String getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(LocalDateTime createdOn) {
+    public void setCreatedOn(String createdOn) {
         this.createdOn = createdOn;
     }
 
@@ -170,4 +189,6 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
+
 }

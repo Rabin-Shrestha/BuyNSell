@@ -3,6 +3,7 @@ package edu.mum.controller;
 import edu.mum.domain.Post;
 import edu.mum.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 /**
  * Created by prasannabajracharya on 8/11/17.
  */
+@Document
 @RestController
 @RequestMapping("/post")
 public class PostController implements IController<Post> {
@@ -56,7 +58,7 @@ public class PostController implements IController<Post> {
     }
 
     @GetMapping("/find/category/{categoryValue}")
-    public List<Post> findByCategory(@PathVariable("categoryValue") String category) {
-        return postService.findAllByCategory(category);
+    public List<Post> findByCatagory_Name(@PathVariable("categoryValue") String categoryName) {
+        return postService.findAllByCatagory_Name(categoryName);
     }
 }

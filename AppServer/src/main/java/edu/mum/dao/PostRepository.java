@@ -2,6 +2,7 @@ package edu.mum.dao;
 
 import edu.mum.domain.Post;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface PostRepository extends MongoRepository<Post, Integer> {
 
     List<Post> findAllByTitle(String title);
 
-    List<Post> findAllByCategory(String category);
+    List<Post> findAllByCatagory_Name(String categoryName);
 }

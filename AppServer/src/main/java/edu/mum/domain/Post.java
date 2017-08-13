@@ -1,31 +1,43 @@
 package edu.mum.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by prasannabajracharya on 8/11/17.
  */
+@Document
 public class Post {
     @Id
     private String id;
     private String title;
-    private String category;
+    private Catagory catagory;
     private Date postedOn;
     private String description;
     private String photoURL;
     private String userId;
+    private PriceDetail priceDetail;
+    private String itemSpecification;
+    private Integer numOfViews;
+    private List<Comment> listOfComments;
 
-    public Post() {
-    }
+    public Post(){}
 
-    public Post(String title, String category, Date postedOn, String description, String photoURL) {
+    public Post(String title, Catagory catagory, Date postedOn, String description, String photoURL, String userId, PriceDetail priceDetail, String itemSpecification, Integer numOfViews, List<Comment> listOfComments) {
         this.title = title;
-        this.category = category;
+        this.catagory = catagory;
         this.postedOn = postedOn;
         this.description = description;
         this.photoURL = photoURL;
+        this.userId = userId;
+        this.priceDetail = priceDetail;
+        this.itemSpecification = itemSpecification;
+        this.numOfViews = numOfViews;
+        this.listOfComments = listOfComments;
     }
 
     public String getId() {
@@ -44,12 +56,12 @@ public class Post {
         this.title = title;
     }
 
-    public String getCategory() {
-        return category;
+    public Catagory getCatagory() {
+        return catagory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCatagory(Catagory catagory) {
+        this.catagory = catagory;
     }
 
     public Date getPostedOn() {
@@ -84,16 +96,52 @@ public class Post {
         this.userId = userId;
     }
 
+    public PriceDetail getPriceDetail() {
+        return priceDetail;
+    }
+
+    public void setPriceDetail(PriceDetail priceDetail) {
+        this.priceDetail = priceDetail;
+    }
+
+    public String getItemSpecification() {
+        return itemSpecification;
+    }
+
+    public void setItemSpecification(String itemSpecification) {
+        this.itemSpecification = itemSpecification;
+    }
+
+    public Integer getNumOfViews() {
+        return numOfViews;
+    }
+
+    public void setNumOfViews(Integer numOfViews) {
+        this.numOfViews = numOfViews;
+    }
+
+    public List<Comment> getListOfComments() {
+        return listOfComments;
+    }
+
+    public void setListOfComments(List<Comment> listOfComments) {
+        this.listOfComments = listOfComments;
+    }
+
     @Override
     public String toString() {
         return "Post{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", category='" + category + '\'' +
+                ", catagory=" + catagory +
                 ", postedOn=" + postedOn +
                 ", description='" + description + '\'' +
                 ", photoURL='" + photoURL + '\'' +
                 ", userId='" + userId + '\'' +
+                ", priceDetail=" + priceDetail +
+                ", itemSpecification='" + itemSpecification + '\'' +
+                ", numOfViews=" + numOfViews +
+                ", listOfComments=" + listOfComments +
                 '}';
     }
 }
