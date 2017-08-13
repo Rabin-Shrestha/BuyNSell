@@ -42,7 +42,7 @@ public class UserController implements IController<User> {
     }
 
     @Override
-    @GetMapping("/")
+    @GetMapping(value = "/" , produces = "application/json")
     public List<User> getAll() {
         return userService.getAll();
     }
